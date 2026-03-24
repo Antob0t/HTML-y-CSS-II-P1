@@ -1,0 +1,129 @@
+@use "../variables" as *;
+.fichas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    @media screen and (min-width: $mq-large) {
+        grid-template-columns: 1fr 1fr;
+        width: 1000px; 
+        margin: 0 auto;
+    }
+}
+.ficha{
+    background-color: $color-blanco;
+    border-radius: 20px;
+    box-shadow: $box-shadow-base;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.ficha__encabezado {
+    padding: 0px 15px;
+    font-family: $font-titulos;
+    font-size: 1.5rem;
+    color: $color-secundario;
+    margin-bottom: 15px;
+}
+.ficha__figura {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+     @media screen and (min-width: $mq-large) {
+        height: 400px;
+    }
+}
+.ficha__imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ficha__etiquetas {
+    position: absolute;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    padding: 10px 10px 10px 10px;
+    background: none;
+}
+.ficha__etiqueta {
+    background-color: $color-acento;
+    color: $color-secundario;
+    padding: 5px 8px 0px 8px;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-family: $font-acento;
+    box-shadow: $box-shadow-base;
+}
+
+.ficha__descripcion {
+    padding: 0 15px 15px 15px;
+    font-family: $font-cuerpo;
+    color: $color-texto;
+    flex-grow: 1;
+}
+.ficha__lista {
+    list-style: none;
+    padding: 10px 15px 15px 15px;
+    margin: 0;
+    font-family: $font-cuerpo;
+    background-color: $color-fondo;
+}
+.ficha__dato {
+    font-size: 0.9rem;
+    color: $color-texto;
+    margin-bottom: 5px;
+}
+.ficha__dato--direccion {
+    font-style: italic;
+}
+.ficha__dato--cerrado {
+    color: $color-acento;
+    font-weight: $font-weight-bold;
+    -webkit-text-stroke: 0.25px $color-texto;
+}
+.ficha__dato--24h {
+    color: $color-secundario;
+    font-weight: $font-weight-bold;
+}
+.ficha__enlaces{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px 20px 15px;
+    list-style: none;
+    justify-content: space-between;
+}
+.ficha__enlace {
+    font-family: $font-titulos;
+    color: $color-acento;
+    text-decoration: none;
+    background-color: $color-secundario;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: none;
+    @media screen and (min-width: $mq-large) {
+        font-size: 1.15rem;
+        margin-top: 10px;
+    }
+}
+.ficha__enlace:hover {
+    transform: translateY(-3px);
+    color: $color-blanco;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba($color-texto, 0.3);
+    transition: all 0.3s ease;
+}
+.ficha__enlace--destacado{
+    color: $color-blanco;
+    background-color: $color-acento;
+}
+.ficha__enlace--destacado:hover{
+    color: $color-texto;
+    background-color: $color-blanco;
+}

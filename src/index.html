@@ -1,36 +1,47 @@
 <!doctype html>
 
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
-    <!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
+    <title>Ruta Gastronomica en Benidom</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Borel&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta name="description" content="Ruta Gastronomica en Benidom es una aplicación web que te ayuda a encontrar los mejores restaurantes en Benidom.">
+    <meta name="keywords" content="restaurantes, benidom, comida, gastronomía, opiniones, recomendaciones, reservas, menús, precios, ubicación, horarios, fotos, contacto">
   </head>
-  <body>
-    <div class="uoc-container">
-      <picture>
-        <source
-          srcset="./assets/images/logo.png?as=webp&width=350"
-          type="image/webp"
-        />
-        <img
-          src="./assets/images/logo.png?width=350"
-          alt="Universitat Oberta de Catalunya"
-          class="uoc-logo"
-        />
-      </picture>
-      <h1 class="uoc-title">Hello, UOC!</h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
-    </div>
+  <body class="body">
+    <include src="./views/nav.html"></include>
+    <main>
+      <section class="portada">
+        <h1 class="portada__titulo">Bienvenido a Ruta <span class="portada__titulo--resaltado">Gastronómica en Benidom</span></h1>
+        <p class="portada__descripcion">Descubre los sabores más auténticos de la capital de la Costa Blanca. Desde sus espectaculares arroces marineros hasta el tapeo más tradicional del casco antiguo.</p>
+        <a class="portada__enlace traducible" href="#fichas">Empieza la ruta</a>
+      </section>
+      <section class="introduccion">
+        <h2 class="introduccion__titulo">Benidorm a Bocados: La Ruta Definitiva</h2>
+        <p class="introduccion__parrafo">Benidorm esconde un mapa culinario que sorprende a cualquiera. Entre sus calles bulle una gastronomía espectacular que mezcla lo mejor del mar Mediterráneo, la herencia de las tabernas del norte y toques de pura vanguardia. Hemos preparado un recorrido con 13 paradas obligatorias para que te comas la ciudad a bocados: desde arroces marineros que saben a tradición, hasta barras de pintxos donde el buen ambiente está asegurado. Coge sitio, que empezamos.</p>
+      </section>
+      <section class="fichas" id="fichas">
+        <include src="./views/fichas/dvora.html"></include>
+        <include src="./views/fichas/mejillonera.html"></include>
+        <include src="./views/fichas/casatoni.html"></include>
+        <include src="./views/fichas/marianos.html"></include>
+        <include src="./views/fichas/senoria.html"></include>
+        <include src="./views/fichas/marina.html"></include>
+        <include src="./views/fichas/kinzo.html"></include>
+        <include src="./views/fichas/carmencita.html"></include>
+        <include src="./views/fichas/mos.html"></include>
+      </section>
+      <section class="mapa">
+        <h2 class="mapa__titulo">Mapa de la Ruta</h2>
+        <div class="mapa__contenedor" id="mapa"></div>
+      </section>
+    </main>
     <include src="./views/footer.html"></include>
     <script type="module" src="./assets/scripts/main.js"></script>
-    <!-- do not remove this line! -->
   </body>
 </html>

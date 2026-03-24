@@ -1,12 +1,37 @@
 @use "sass:color";
 
-$font-family-sans-serif:
-  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-  Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$font-family-serif: "Georgia", "Times New Roman", serif;
+$font-cuerpo: 'Noto Sans Display', sans-serif;
+$font-titulos: 'IBM Plex Serif', serif;
+$font-acento: 'Borel', sans-serif;
 
-$uoc-corporate: #000078;
-$uoc-masterbrand: #73edff;
-$uoc-bg: color.scale($uoc-masterbrand, $lightness: 70%);
+$font-size-base: 14px;
+$font-size-subtitulo: 1.25rem;
+$font-size-titulo: 2rem;
 
-$mqMinWidth: 420px;
+$font-weight-normal: 400;
+$font-weight-bold: 800;
+
+$mq-min-width: 420px;
+$mq-medium: 768px;
+$mq-large: 1000px;
+
+$color-texto: #000E28;
+$color-fondo: #e6e6e6;
+$color-secundario: #040DBF;
+$color-acento: #F4C601;
+$color-acento-2: #f40101;
+$color-blanco: #FFFFFF;
+
+$box-shadow-base: 0 1px 5px rgba($color-texto, 0.3);
+
+@function font-scale($level) {
+  $base-size: 1rem;
+  $ratio: 1.25;
+  $result: $base-size;
+  @if $level > 0 {
+    @for $i from 1 through $level {
+      $result: $result * $ratio;
+    }
+  }
+  @return $result;
+}

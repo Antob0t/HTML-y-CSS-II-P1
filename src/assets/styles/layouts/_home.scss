@@ -1,60 +1,169 @@
-@use "../variables";
+@use "../variables" as *;
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
-body {
+img {
+  max-width: 100%;
+  height: auto;
+}
+.portada {
+  height: 700px;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  margin: 0;
-  padding: 2rem;
-  font-family: variables.$font-family-sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  background-color: variables.$uoc-bg;
-  color: variables.$uoc-corporate;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 20px;
+  background-image: url('../images/portada.jpg?as=webp&quality=75');
+  background-size: cover;
+  background-position: center;
+  text-shadow: 0 1px 10px rgba($color-texto, 0.8);
+   @media screen and (min-width: $mq-medium) {
+    height: 500px;
+    padding: 50px 40px;
+  }
+}
+.portada__titulo {
+  font-family: $font-titulos;
+  font-size: font-scale(3);;
+  color: $color-blanco;
+  margin-bottom: 20px;
+  padding: 10px;
+  text-shadow: 0 2px 2px rgba($color-texto, 1);
+   @media screen and (min-width: $mq-medium){
+    font-size:  font-scale(4);
+  }
 }
 
-.uoc-container {
+.portada__titulo--resaltado {
+  font-family: $font-acento;
+  color: $color-acento;
+}
+.portada__descripcion {
+  font-family: $font-cuerpo;
+  font-size: $font-size-subtitulo;
+  color: $color-blanco;
+  margin-bottom: 3cqmin;
+  max-width: 600px;
+  text-shadow: 0 2px 2px rgba($color-texto, 1);
+  padding: 20px;
+  border-radius: 20px;
+   @media screen and (min-width: $mq-medium) {
+    padding: 30px;
+    border-radius: 15px;
+  }
+}
+.portada__enlace {
+  display: inline-block;
+  align-items: center;
+  font-family: $font-acento;
+  font-size: 14px;
+  font-weight: $font-weight-bold;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: $color-secundario;
+  color: $color-blanco;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 1px 5px rgba($color-texto, 0.3);
+  text-decoration: none;
+}
+.portada__enlace:hover {
+  background-color: $color-acento;
+  color: $color-secundario;
+  cursor: pointer;
+  transform: translateY(-4px);
+  box-shadow: none;
+}
+.separador {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+  width: 100%;
+  height: 2px;
+}
+.separador__imagen {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+  width: 100%;
+  height: 2px;
+}
+.body {
+  background-color: $color-fondo;
+}
+.introduccion {
+  display: flex;
+  flex-direction: column;
+  font-family: $font-cuerpo;
+  margin-top: 10px;
+  padding: 40px 20px;
+  text-align: center;
+}
+.introduccion__titulo {
+  font-family: $font-titulos;
+  font-weight: $font-weight-bold;
+  font-size:  font-scale(3);
+  color: $color-texto;
+  margin-bottom: 20px;
+  @media screen and (min-width: $mq-medium){
+    font-size:  font-scale(4);
+  }
+}
+.introduccion__parrafo {
+  justify-content: center;
+  font-size: $font-size-base;
+  color: $color-texto;
   max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 2rem;
-  text-align: center;
-  background-color: #fff;
-  box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin: 0 auto;
+  line-height: 1.6;
 }
-
-.uoc-logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  max-width: 200px;
-  height: auto;
-
-  @media (min-width: variables.$mqMinWidth) {
-    max-width: none;
+.mapa__titulo{
+  @extend %introduccion__titulo !optional;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size:  font-scale(3);
+  padding: 20px 0px 0px 0px;
+  margin-bottom: 0;
+  @media screen and (min-width: $mq-medium) {
+    font-size: font-scale(4);
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
   }
 }
-
-.uoc-title {
-  font-family: variables.$font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: variables.$uoc-corporate;
-
-  @media (min-width: variables.$mqMinWidth) {
-    font-size: 36px;
-  }
+.mapa__titulo::after {
+  content: ""; 
+  width: 100%;
+  height: 100px;
+  background-image: url('../images/separador.png'); 
+  background-size: contain;
+  background-repeat: repeat-x;
 }
+.mapa__contenedor {
+  position: relative;
+  z-index: 1; 
+  width: 100%;
+  height: 600px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: $box-shadow-base;
 
-.uoc-footer {
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
-  text-align: center;
+  @media screen and (min-width: $mq-medium) {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: $mq-large) {
+    width: 1000px;
+    display: block;
+    margin: 0 auto;
+  }
 }

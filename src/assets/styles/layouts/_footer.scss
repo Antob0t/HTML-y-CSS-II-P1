@@ -1,0 +1,57 @@
+@use "../variables" as *;
+
+.footer {
+    margin-top: 100px;
+    background-color: $color-secundario;
+    color: $color-blanco;
+    text-align: center;
+    padding: 30px;
+    font-family: $font-cuerpo;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+@media screen and (min-width: $mq-medium) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 200px;
+  }
+}
+.footer__copyright {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+@media screen and (min-width: $mq-large) {
+    padding-top: 15px;
+    padding-left: 20px;;
+  }
+}
+.footer__uoc {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    @media screen and (min-width: $mq-large) {
+    padding-top: 15px;
+  }
+}
+.footer__redes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    justify-content: space-between;
+    gap: 15px;
+@media screen and (min-width: $mq-large) {
+    padding-top: 15px;
+    padding-right: 20px;;
+  }
+}
+.footer__enlace {
+    color: $color-blanco;
+    text-decoration: none;
+    font-size: 2rem;
+}
+.footer__enlace:hover {
+    color: $color-acento;
+    transform: translateY(-3px);
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}

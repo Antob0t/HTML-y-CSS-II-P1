@@ -7,6 +7,7 @@
  * Import dependencies
  */
 @use "dependencies";
+@use "variables";
 
 /**
  * Import layouts
@@ -14,7 +15,9 @@
  */
 
 @use "layouts/home";
-
+@use "layouts/nav";
+@use "layouts/footer";
+@use "layouts/fichas";
 /**
  * Do NOT include anything else in this file!
  */

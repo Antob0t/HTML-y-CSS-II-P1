@@ -10,7 +10,5 @@
  * Write any other JavaScript below
  */
 
-+(function () {
-  const university = "UOC";
-  console.log(`Hello, ${university}!`);
-})();
+import { traducirPagina } from './traduccion.js';
+import './mapa.js';
