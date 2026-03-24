@@ -24,17 +24,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uoc-advanced-html-css/uoc-boilerplate.git"
+    "url": "git+https://github.com/Antob0t/PEC1-Ruta-Gastronomica.git"
   },
   "author": {
-    "name": "Jordi Tarrida",
-    "email": "jorditarrida@uoc.edu"
+    "name": "Antolín Murcia Navarro",
+    "email": "amurciana@uoc.edu"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/uoc-advanced-html-css/uoc-boilerplate/issues"
+    "url": "https://github.com/Antob0t/PEC1-Ruta-Gastronomica/issues"
   },
-  "homepage": "https://github.com/uoc-advanced-html-css/uoc-boilerplate#readme",
+  "homepage": "https://github.com/Antob0t/PEC1-Ruta-Gastronomica#readme",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.16.3",
     "autoprefixer": "^10.4.24",
