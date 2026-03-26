@@ -1,6 +1,6 @@
 # Ruta Gastronómica en Benidorm
 
-Este proyecto es una aplicación web detallada que presenta una selección de los mejores rincones culinarios de Benidorm. Ha sido desarrollado utilizando el **UOC Boilerplate v3.1.0**, un entorno de desarrollo moderno basado en Parcel para optimizar el flujo de trabajo frontend.
+Este proyecto es una aplicación web detallada que presenta una selección de los mejores rincones culinarios de Benidorm. Ha sido desarrollado utilizando el **UOC Boilerplate v3.13.0**, un entorno de desarrollo moderno basado en Parcel para optimizar el flujo de trabajo frontend.
 
 ## ¿De qué trata este proyecto?
 
