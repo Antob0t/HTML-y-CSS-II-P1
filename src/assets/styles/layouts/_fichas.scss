@@ -1,129 +1,150 @@
 @use "../variables" as *;
+
 .fichas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 20px;
-    @media screen and (min-width: $mq-large) {
-        grid-template-columns: 1fr 1fr;
-        width: 1000px; 
-        margin: 0 auto;
-    }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px;
+
+  @media screen and (min-width: $mq-large) {
+    grid-template-columns: 1fr 1fr;
+    width: 1000px;
+    margin: 0 auto;
+  }
 }
-.ficha{
-    background-color: $color-blanco;
-    border-radius: 20px;
-    box-shadow: $box-shadow-base;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-.ficha__encabezado {
-    padding: 0px 15px;
+
+.ficha {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: $box-shadow-base;
+  background-color: $color-blanco;
+
+  &__encabezado {
+    margin-bottom: 15px;
+    padding: 0 15px;
     font-family: $font-titulos;
     font-size: 1.5rem;
     color: $color-secundario;
-    margin-bottom: 15px;
-}
-.ficha__figura {
+  }
+
+  &__figura {
     position: relative;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
-     @media screen and (min-width: $mq-large) {
-        height: 400px;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 15px;
+    overflow: hidden;
+
+    @media screen and (min-width: $mq-large) {
+      height: 400px;
     }
-}
-.ficha__imagen {
+  }
+
+  &__imagen {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-.ficha__etiquetas {
+  }
+
+  &__etiquetas {
     position: absolute;
-    list-style: none;
     display: flex;
     gap: 10px;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
+    list-style: none;
     background: none;
-}
-.ficha__etiqueta {
-    background-color: $color-acento;
-    color: $color-secundario;
-    padding: 5px 8px 0px 8px;
-    border-radius: 15px;
-    font-size: 0.7rem;
-    font-family: $font-acento;
-    box-shadow: $box-shadow-base;
-}
+  }
 
-.ficha__descripcion {
-    padding: 0 15px 15px 15px;
+  &__etiqueta {
+    padding: 5px 8px 0;
+    border-radius: 15px;
+    box-shadow: $box-shadow-base;
+    font-family: $font-acento;
+    font-size: 0.7rem;
+    color: $color-secundario;
+    background-color: $color-acento;
+  }
+
+  &__descripcion {
+    flex-grow: 1;
+    padding: 0 15px 15px;
     font-family: $font-cuerpo;
     color: $color-texto;
-    flex-grow: 1;
-}
-.ficha__lista {
-    list-style: none;
-    padding: 10px 15px 15px 15px;
+  }
+
+  &__lista {
     margin: 0;
+    padding: 10px 15px 15px;
+    list-style: none;
     font-family: $font-cuerpo;
+    font-weight: $font-weight-thin;
     background-color: $color-fondo;
-}
-.ficha__dato {
+  }
+
+  &__dato {
+    margin-bottom: 5px;
     font-size: 0.9rem;
     color: $color-texto;
-    margin-bottom: 5px;
-}
-.ficha__dato--direccion {
-    font-style: italic;
-}
-.ficha__dato--cerrado {
-    color: $color-acento;
-    font-weight: $font-weight-bold;
-    -webkit-text-stroke: 0.25px $color-texto;
-}
-.ficha__dato--24h {
-    color: $color-secundario;
-    font-weight: $font-weight-bold;
-}
-.ficha__enlaces{
+
+    &--direccion {
+      font-style: italic;
+    }
+
+    &--cerrado {
+      font-weight: $font-weight-bold;
+      color: $color-acento;
+      text-shadow: $color-texto 1px 0 6px;
+    }
+
+    &--24h {
+      font-weight: $font-weight-bold;
+      color: $color-secundario;
+    }
+  }
+
+  &__enlaces {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
-    padding: 10px 15px 20px 15px;
-    list-style: none;
     justify-content: space-between;
-}
-.ficha__enlace {
+    gap: 10px;
+    padding: 10px 15px 20px;
+    list-style: none;
+  }
+
+  &__enlace {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 15px;
     font-family: $font-titulos;
     color: $color-acento;
     text-decoration: none;
     background-color: $color-secundario;
-    padding: 5px 10px;
-    border-radius: 15px;
-    border: none;
-    @media screen and (min-width: $mq-large) {
-        font-size: 1.15rem;
-        margin-top: 10px;
-    }
-}
-.ficha__enlace:hover {
-    transform: translateY(-3px);
-    color: $color-blanco;
-    cursor: pointer;
-    box-shadow: 0 6px 12px rgba($color-texto, 0.3);
     transition: all 0.3s ease;
-}
-.ficha__enlace--destacado{
-    color: $color-blanco;
-    background-color: $color-acento;
-}
-.ficha__enlace--destacado:hover{
-    color: $color-texto;
-    background-color: $color-blanco;
+
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-3px);
+      color: $color-blanco;
+      box-shadow: 0 6px 12px rgba($color-texto, 0.3);
+    }
+
+    &--destacado {
+      color: $color-blanco;
+      background-color: $color-acento;
+
+      &:hover {
+        color: $color-texto;
+        background-color: $color-blanco;
+      }
+    }
+
+    @media screen and (min-width: $mq-large) {
+      margin-top: 10px;
+      font-size: 1.15rem;
+    }
+  }
 }

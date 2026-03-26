@@ -1,57 +1,65 @@
 @use "../variables" as *;
 
 .footer {
-    margin-top: 100px;
-    background-color: $color-secundario;
-    color: $color-blanco;
-    text-align: center;
-    padding: 30px;
-    font-family: $font-cuerpo;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-@media screen and (min-width: $mq-medium) {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 100px;
+  padding: 30px;
+  background-color: $color-secundario;
+  color: $color-blanco;
+  text-align: center;
+  font-family: $font-cuerpo;
+
+  @media screen and (min-width: $mq-medium) {
     flex-direction: row;
     justify-content: space-between;
     height: 200px;
   }
-}
-.footer__copyright {
-    font-size: 0.9rem;
+
+  &__copyright {
     margin-bottom: 5px;
-@media screen and (min-width: $mq-large) {
-    padding-top: 15px;
-    padding-left: 20px;;
-  }
-}
-.footer__uoc {
-    font-size: 0.8rem;
-    margin-bottom: 20px;
+    font-size: 0.9rem;
+
     @media screen and (min-width: $mq-large) {
-    padding-top: 15px;
+      padding-top: 15px;
+      padding-left: 20px;
+    }
   }
-}
-.footer__redes {
+
+  &__uoc {
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+
+    @media screen and (min-width: $mq-large) {
+      padding-top: 15px;
+    }
+  }
+
+  &__redes {
     display: flex;
     flex-direction: row;
     align-items: center;
-    list-style: none;
     justify-content: space-between;
     gap: 15px;
-@media screen and (min-width: $mq-large) {
-    padding-top: 15px;
-    padding-right: 20px;;
+    list-style: none;
+
+    @media screen and (min-width: $mq-large) {
+      padding-top: 15px;
+      padding-right: 20px;
+    }
   }
-}
-.footer__enlace {
+
+  &__enlace {
+    font-size: 2rem;
     color: $color-blanco;
     text-decoration: none;
-    font-size: 2rem;
-}
-.footer__enlace:hover {
-    color: $color-acento;
-    transform: translateY(-3px);
     transition: color 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
+
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-3px);
+      color: $color-acento;
+    }
+  }
 }
