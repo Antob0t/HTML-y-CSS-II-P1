@@ -4,7 +4,7 @@
   "private": true,
   "description": "Ruta Gatronomica por Benidorm",
   "scripts": {
-    "parcel:serve": "parcel -p 8123 --target web",
+    "parcel:serve": "parcel -p 1234 --target web",
     "parcel:build": "parcel build --target web --no-source-maps --no-cache",
     "clean": "rimraf dist .cache .cache-loader .parcel-cache",
     "dev": "npm-run-all clean parcel:serve",
